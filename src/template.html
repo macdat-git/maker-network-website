@@ -1,0 +1,149 @@
+<!-- Source for index.html and each language folder. Edit this and src/strings.json, then run: node build.mjs -->
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  {{redirect}}<link rel="stylesheet" href="{{root}}styles.css">
+{{alternates}}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{ogDescription}}">
+  <meta property="og:url" content="https://macdat-git.github.io/maker-network-website/{{path}}">
+  <meta property="og:locale" content="{{ogLocale}}">
+  <meta property="og:image" content="https://macdat-git.github.io/maker-network-website/social-preview.png">
+  <meta property="og:image:width" content="1640">
+  <meta property="og:image:height" content="856">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="./">Maker Network</a>
+    <nav>
+      <a href="#how">{{nav.how}}</a>
+      <a href="#capabilities">{{nav.capabilities}}</a>
+      <a href="#why">{{nav.why}}</a>
+      <a href="#join">{{nav.join}}</a>
+      <a href="https://www.facebook.com/groups/957347337170363" target="_blank" rel="noopener" data-goatcounter-click="facebook-group-menu">{{nav.facebook}}</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>{{hero.title}}</h1>
+      <p>{{hero.text}}</p>
+      <a class="button" href="#join" data-goatcounter-click="join-button-top">{{hero.button}}</a>
+    </section>
+
+    <section id="how">
+      <h2>{{how.title}}</h2>
+      <ol class="steps">
+        <li><h3>{{how.1.title}}</h3><p>{{how.1.text}}</p></li>
+        <li><h3>{{how.2.title}}</h3><p>{{how.2.text}}</p></li>
+        <li><h3>{{how.3.title}}</h3><p>{{how.3.text}}</p></li>
+        <li><h3>{{how.4.title}}</h3><p>{{how.4.text}}</p></li>
+      </ol>
+    </section>
+
+    <section id="capabilities">
+      <h2>{{caps.title}}</h2>
+      <ul class="tags">
+        <li>{{cap.3d}}</li>
+        <li>{{cap.laser}}</li>
+        <li>{{cap.cnc}}</li>
+        <li>{{cap.wood}}</li>
+        <li>{{cap.sewing}}</li>
+        <li>{{cap.welding}}</li>
+        <li>{{cap.electronics}}</li>
+        <li>{{cap.vinyl}}</li>
+      </ul>
+    </section>
+
+    <section id="why">
+      <h2>{{why.title}}</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>{{why.1.title}}</h3>
+          <p>{{why.1.text}}</p>
+        </article>
+        <article class="card">
+          <h3>{{why.2.title}}</h3>
+          <p>{{why.2.text}}</p>
+        </article>
+        <article class="card">
+          <h3>{{why.3.title}}</h3>
+          <p>{{why.3.text}}</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>{{join.title}}</h2>
+      <p>{{join.text}}</p>
+
+      <!-- To turn the form on: create a free form at https://formspree.io (or a similar
+           form service), then put its endpoint URL in data-endpoint below. -->
+      <form id="signup" class="signup" method="POST" data-endpoint="https://formspree.io/f/meagjonw"
+        data-msg-soon="{{msg.soon}}" data-msg-tick="{{msg.tick}}" data-msg-sending="{{msg.sending}}"
+        data-msg-thanks="{{msg.thanks}}" data-msg-error="{{msg.error}}">
+        <input type="hidden" name="language" value="{{lang}}">
+        <div class="field">
+          <label for="name">{{form.name}}</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">{{form.email}}</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="area">{{form.area}}</label>
+          <input id="area" name="area" placeholder="{{form.areaPlaceholder}}" required>
+        </div>
+        <fieldset class="field">
+          <legend>{{form.caps}}</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="capabilities" value="FDM 3D printing"> {{form.cap.fdm}}</label>
+            <label><input type="checkbox" name="capabilities" value="Resin 3D printing"> {{form.cap.resin}}</label>
+            <label><input type="checkbox" name="capabilities" value="Laser cutting / engraving"> {{form.cap.laser}}</label>
+            <label><input type="checkbox" name="capabilities" value="CNC routing / milling"> {{form.cap.cnc}}</label>
+            <label><input type="checkbox" name="capabilities" value="Woodworking"> {{form.cap.wood}}</label>
+            <label><input type="checkbox" name="capabilities" value="Sewing / textiles"> {{form.cap.sewing}}</label>
+            <label><input type="checkbox" name="capabilities" value="Welding / metalwork"> {{form.cap.welding}}</label>
+            <label><input type="checkbox" name="capabilities" value="Electronics / PCB assembly"> {{form.cap.electronics}}</label>
+            <label><input type="checkbox" name="capabilities" value="Vinyl cutting"> {{form.cap.vinyl}}</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="machines">{{form.machines}}</label>
+          <textarea id="machines" name="machines" rows="3" placeholder="{{form.machinesPlaceholder}}"></textarea>
+        </div>
+        <div class="field">
+          <label for="need">{{form.need}}</label>
+          <textarea id="need" name="need" rows="2" placeholder="{{form.needPlaceholder}}"></textarea>
+        </div>
+        <button class="button" type="submit" data-goatcounter-click="signup-button-click">{{form.submit}}</button>
+        <p class="form-note">{{form.note}}</p>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="community">
+        <h3>{{community.title}}</h3>
+        <p>{{community.text}}</p>
+        <a class="button secondary" href="https://www.facebook.com/groups/957347337170363" target="_blank" rel="noopener" data-goatcounter-click="facebook-group-join-section">{{community.button}}</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> {{footer.tagline}}</p>
+    <p class="small-print">{{footer.analytics}}</p>
+    <p><a href="https://www.facebook.com/groups/957347337170363" target="_blank" rel="noopener" data-goatcounter-click="facebook-group-footer">{{footer.facebook}}</a></p>
+    <p class="languages"><span>{{footer.language}}:</span> {{switcher}}</p>
+  </footer>
+  <script src="{{root}}main.js"></script>
+  <!-- Visit counts: GoatCounter (no cookies). Dashboard: https://macdat.goatcounter.com -->
+  <script data-goatcounter="https://macdat.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
