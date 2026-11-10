@@ -10,6 +10,7 @@ from the `main` branch: any change pushed to `main` goes live within a minute or
 - `index.html`: the page
 - `styles.css`: styles
 - `main.js`: the waiting-list form (sends to Formspree) and the footer year
+- `social-preview.png`: image shown when the link is shared (Facebook, iMessage, Slack…)
 - `.nojekyll`: tells GitHub Pages to serve the files as they are
 
 ## Preview locally
