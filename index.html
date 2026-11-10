@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maker Network: makers making for each other</title>
+  <meta name="description" content="A network of makers who make things for each other. Post a job, and a member with the right machine makes it, at cost.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">Maker Network</a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#capabilities">What members make</a>
+      <a href="#why">Why Maker Network</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Your workshop, plus everyone else's.</h1>
+      <p>Have 3D printers but no laser cutter? Post the job and a member with a laser cutter makes your parts.
+         Then take print jobs from others in return.</p>
+      <a class="button" href="#join">Join Maker Network</a>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><h3>List what you can make</h3><p>Add your machines, materials and skills to your profile.</p></li>
+        <li><h3>Post a job</h3><p>Upload your files and say what you need, how many and by when.</p></li>
+        <li><h3>Get quotes</h3><p>Members with the right machines reply with price and lead time.</p></li>
+        <li><h3>Get it made</h3><p>Pay materials at cost, a little for machine time and a small handling fee. Pick up locally, or have it shipped.</p></li>
+      </ol>
+    </section>
+
+    <section id="capabilities">
+      <h2>What members make</h2>
+      <ul class="tags">
+        <li>3D printing (FDM &amp; resin)</li>
+        <li>Laser cutting &amp; engraving</li>
+        <li>CNC routing &amp; milling</li>
+        <li>Woodworking</li>
+        <li>Sewing &amp; textiles</li>
+        <li>Welding &amp; metalwork</li>
+        <li>Electronics &amp; PCB assembly</li>
+        <li>Vinyl cutting</li>
+      </ul>
+    </section>
+
+    <section id="why">
+      <h2>Why Maker Network</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Makers helping makers</h3>
+          <p>Every member is a maker. You make what your machines are good at, and others make what you can't.</p>
+        </article>
+        <article class="card">
+          <h3>At cost, no markup</h3>
+          <p>Makers charge materials at cost plus set machine-time rates and a small handling fee. No profit on jobs.</p>
+        </article>
+        <article class="card">
+          <h3>No cut of your jobs</h3>
+          <p>A flat $5 a month (or $50 a year) covers running costs. Earn points for every job to spend on spare materials and perks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>Join the waiting list</h2>
+      <p>Membership is for makers: list at least one machine or skill you can offer.
+         We're starting in San Diego County, with shipping nationwide.
+         Tell us about your machines and we'll let you know when membership opens.</p>
+
+      <!-- To turn the form on: create a free form at https://formspree.io (or a similar
+           form service), then put its endpoint URL in data-endpoint below. -->
+      <form id="signup" class="signup" method="POST" data-endpoint="https://formspree.io/f/meagjonw">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="area">City or neighbourhood</label>
+          <input id="area" name="area" placeholder="e.g. North Park, Escondido, Chula Vista" required>
+        </div>
+        <fieldset class="field">
+          <legend>What can you make? (tick all that apply)</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="capabilities" value="FDM 3D printing"> FDM 3D printing</label>
+            <label><input type="checkbox" name="capabilities" value="Resin 3D printing"> Resin 3D printing</label>
+            <label><input type="checkbox" name="capabilities" value="Laser cutting / engraving"> Laser cutting / engraving</label>
+            <label><input type="checkbox" name="capabilities" value="CNC routing / milling"> CNC routing / milling</label>
+            <label><input type="checkbox" name="capabilities" value="Woodworking"> Woodworking</label>
+            <label><input type="checkbox" name="capabilities" value="Sewing / textiles"> Sewing / textiles</label>
+            <label><input type="checkbox" name="capabilities" value="Welding / metalwork"> Welding / metalwork</label>
+            <label><input type="checkbox" name="capabilities" value="Electronics / PCB assembly"> Electronics / PCB assembly</label>
+            <label><input type="checkbox" name="capabilities" value="Vinyl cutting"> Vinyl cutting</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="machines">Your machines (optional)</label>
+          <textarea id="machines" name="machines" rows="3" placeholder="e.g. 2× Bambu P1S, Prusa MK4, 10 W diode laser"></textarea>
+        </div>
+        <div class="field">
+          <label for="need">What would you like others to make for you? (optional)</label>
+          <textarea id="need" name="need" rows="2" placeholder="e.g. laser-cut acrylic panels, CNC aluminium brackets"></textarea>
+        </div>
+        <button class="button" type="submit">Join the waiting list</button>
+        <p class="form-note">We only use your details to tell you about Maker Network. No spam, and you can ask us to delete them at any time.</p>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Maker Network. By makers, for makers.</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
