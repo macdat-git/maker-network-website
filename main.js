@@ -28,6 +28,8 @@ form.addEventListener('submit', async (event) => {
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     form.reset();
+    // Count successful sign-ups as an event in GoatCounter (if it has loaded).
+    window.goatcounter?.count?.({ path: 'waiting-list-signup', title: 'Waiting list sign-up', event: true });
     status.textContent = "Thanks! You're on the list. We'll be in touch when membership opens.";
   } catch {
     status.textContent = 'Sorry, something went wrong. Please try again.';

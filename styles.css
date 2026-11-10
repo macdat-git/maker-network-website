@@ -168,3 +168,4 @@ input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 
 .community p { margin: 0 0 0.75rem; color: var(--muted); }
 .button.secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); margin-top: 0; }
 .site-footer a { color: var(--muted); }
+.small-print { font-size: 0.85rem; }
