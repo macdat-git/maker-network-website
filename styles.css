@@ -171,3 +171,5 @@ input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 
 .small-print { font-size: 0.85rem; }
 .languages a { margin: 0 0.1rem; }
 .languages span { color: var(--muted); }
+
+.hero .hero-note { font-size: 1rem; margin-top: 0.75rem; }
